@@ -1,0 +1,23 @@
+# build output
+build/
+*.exe
+*.o
+*.obj
+
+# market data: 100+ MB, download from Nasdaq (see README)
+data/
+
+# Nasdaq's spec PDF: their document, link to it rather than redistribute
+nasdaq/
+
+# local run output and scratch files
+metrics.txt
+run_out.txt
+compile_errors.txt
+struct.txt
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
