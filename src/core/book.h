@@ -23,6 +23,10 @@ enum class ReduceResult : std::uint8_t {
 };
 
 struct Book {
+    // Levels to reserve the first time a side gets a level (0 = plain vector growth).
+    // Global, set once before processing; the reserve-size experiment varies it.
+    static inline std::size_t reserve_on_first_use = 16; // chosen in results/m8-reserve/summary.md
+
     // Both sides keep the best price at back():
     //   bids ascending  (best = highest)
     //   asks descending (best = lowest)
@@ -55,6 +59,8 @@ struct Book {
             lv[i - 1].shares += shares;
             lv[i - 1].order_count++;
         } else {
+            // first touch of this side: reserve up front so early growth doesn't reallocate
+            if (lv.capacity() == 0 && reserve_on_first_use) lv.reserve(reserve_on_first_use);
             lv.insert(lv.begin() + static_cast<std::ptrdiff_t>(i), PriceLevel{price, shares, 1});
         }
     }

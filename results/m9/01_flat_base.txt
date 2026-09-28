@@ -1,0 +1,22 @@
+M9 order-store experiment: 01_flat_base
+date:     2026-09-27 14:52:35
+file:     data/12302019.NASDAQ_ITCH50.itch50.sample
+what:     flat table: AoS slots, key 0 = empty, identity hash, backward-shift delete, 2^21 slots
+change:   vs 00: node-based map -> flat open addressing
+store:    capacity 2097152 slots, 48.0 MB, rehashes 0, rejected refs 0, probe distance mean 0.00 max 1 (at end of run; peak live orders 27221)
+
+Timing (ns/msg, 3 reps interleaved with the other variants)
+  store + books: 74.2 96.9 81.6   median 81.6
+  store only:    37.2 50.6 35.4   median 37.2
+  floor:         22.0 22.4 23.3   median 22.4
+  store cost (store only - floor): 14.8 ns/msg
+  vs 00_unordered_map: store+books -50.7%, store cost -78.9%
+
+Correctness
+  state hash:   96fd73902096c354  MATCH golden
+  store hash:   4c93cee6c8b6ed03  same as baseline, same without books
+  anomalies:    0 (7 store counters + level_missing + level_underflow)
+  crossed:      2 (baseline 2, PNRL halted)
+  cross-check:
+  PASS  orders=27197 levels=23162 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  VERDICT:      CORRECT

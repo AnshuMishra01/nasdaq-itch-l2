@@ -1,0 +1,22 @@
+M9 order-store experiment: 00_unordered_map
+date:     2026-09-27 14:52:35
+file:     data/12302019.NASDAQ_ITCH50.itch50.sample
+what:     std::unordered_map<uint64, Order>, reserve(1M): the M4/M7 store
+change:   baseline
+store:    memory n/a (node-based) (at end of run; peak live orders 27221)
+
+Timing (ns/msg, 3 reps interleaved with the other variants)
+  store + books: 143.8 165.5 174.5   median 165.5
+  store only:    88.8 101.0 92.8   median 92.8
+  floor:         22.0 22.4 23.3   median 22.4
+  store cost (store only - floor): 70.4 ns/msg
+  vs 00_unordered_map: store+books +0.0%, store cost +0.0%
+
+Correctness
+  state hash:   96fd73902096c354  MATCH golden
+  store hash:   4c93cee6c8b6ed03  same as baseline, same without books
+  anomalies:    0 (7 store counters + level_missing + level_underflow)
+  crossed:      2 (baseline 2, PNRL halted)
+  cross-check:
+  PASS  orders=27197 levels=23162 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  VERDICT:      CORRECT

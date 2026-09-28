@@ -1,0 +1,22 @@
+M9 order-store experiment: 02_hash_fibonacci
+date:     2026-09-27 14:52:36
+file:     data/12302019.NASDAQ_ITCH50.itch50.sample
+what:     01 with Fibonacci (multiplicative) hash
+change:   vs 01: hash identity -> fibonacci
+store:    capacity 2097152 slots, 48.0 MB, rehashes 0, rejected refs 0, probe distance mean 0.01 max 1 (at end of run; peak live orders 27221)
+
+Timing (ns/msg, 3 reps interleaved with the other variants)
+  store + books: 108.3 123.0 110.8   median 110.8
+  store only:    62.5 69.7 66.9   median 66.9
+  floor:         22.0 22.4 23.3   median 22.4
+  store cost (store only - floor): 44.5 ns/msg
+  vs 00_unordered_map: store+books -33.1%, store cost -36.8%
+
+Correctness
+  state hash:   96fd73902096c354  MATCH golden
+  store hash:   4c93cee6c8b6ed03  same as baseline, same without books
+  anomalies:    0 (7 store counters + level_missing + level_underflow)
+  crossed:      2 (baseline 2, PNRL halted)
+  cross-check:
+  PASS  orders=27197 levels=23162 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  VERDICT:      CORRECT

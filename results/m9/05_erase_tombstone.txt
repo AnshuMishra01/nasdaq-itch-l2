@@ -1,0 +1,22 @@
+M9 order-store experiment: 05_erase_tombstone
+date:     2026-09-27 14:52:38
+file:     data/12302019.NASDAQ_ITCH50.itch50.sample
+what:     01 with tombstone deletion
+change:   vs 01: delete backward-shift -> tombstones
+store:    capacity 2097152 slots, 48.0 MB, rehashes 1, rejected refs 0, probe distance mean 0.00 max 1 (at end of run; peak live orders 27221)
+
+Timing (ns/msg, 3 reps interleaved with the other variants)
+  store + books: 84.9 84.2 83.1   median 84.2
+  store only:    41.6 43.2 41.0   median 41.6
+  floor:         22.0 22.4 23.3   median 22.4
+  store cost (store only - floor): 19.2 ns/msg
+  vs 00_unordered_map: store+books -49.1%, store cost -72.7%
+
+Correctness
+  state hash:   96fd73902096c354  MATCH golden
+  store hash:   4c93cee6c8b6ed03  same as baseline, same without books
+  anomalies:    0 (7 store counters + level_missing + level_underflow)
+  crossed:      2 (baseline 2, PNRL halted)
+  cross-check:
+  PASS  orders=27197 levels=23162 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  VERDICT:      CORRECT

@@ -77,3 +77,28 @@ struct OrderReplaceMessage {
     std::uint64_t origRef;
     std::uint64_t newRef;
 };
+
+// 'P': execution against a non-displayed order. Never touches the book.
+struct TradeMessage {
+    Side side;
+    std::uint16_t stockLocate;
+    std::uint16_t trackingNumber;
+    std::uint32_t shares;
+    std::uint32_t price;
+    std::uint64_t timeStamp;
+    std::uint64_t orderRef;
+    std::uint64_t matchNumber;
+    std::array<char, 8> symbol;
+};
+
+// 'Q': cross (auction) result. No order refs; crossType 'O' open, 'C' close, 'H' halt/IPO, 'I' intraday.
+struct CrossTradeMessage {
+    char crossType;
+    std::uint16_t stockLocate;
+    std::uint16_t trackingNumber;
+    std::uint32_t crossPrice;
+    std::uint64_t shares;
+    std::uint64_t timeStamp;
+    std::uint64_t matchNumber;
+    std::array<char, 8> symbol;
+};

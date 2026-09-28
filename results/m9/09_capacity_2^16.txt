@@ -1,0 +1,22 @@
+M9 order-store experiment: 09_capacity_2^16
+date:     2026-09-27 14:52:40
+file:     data/12302019.NASDAQ_ITCH50.itch50.sample
+what:     01 with 2^16 slots fixed (same final size as 06, no growth)
+change:   vs 01: capacity 2^21 -> 2^16; vs 06: growth removed
+store:    capacity 65536 slots, 1.5 MB, rehashes 0, rejected refs 0, probe distance mean 0.61 max 210 (at end of run; peak live orders 27221)
+
+Timing (ns/msg, 3 reps interleaved with the other variants)
+  store + books: 131.2 75.4 83.4   median 83.4
+  store only:    48.5 33.3 38.6   median 38.6
+  floor:         22.0 22.4 23.3   median 22.4
+  store cost (store only - floor): 16.2 ns/msg
+  vs 00_unordered_map: store+books -49.6%, store cost -77.0%
+
+Correctness
+  state hash:   96fd73902096c354  MATCH golden
+  store hash:   4c93cee6c8b6ed03  same as baseline, same without books
+  anomalies:    0 (7 store counters + level_missing + level_underflow)
+  crossed:      2 (baseline 2, PNRL halted)
+  cross-check:
+  PASS  orders=27197 levels=23162 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  VERDICT:      CORRECT

@@ -5,6 +5,7 @@
 #include <concepts>
 #include <cstdint>
 #include <cstring>
+#include <utility>
 #include "core/message.h"
 
 template <std::unsigned_integral T, std::size_t Count = sizeof(T)>
@@ -108,11 +109,47 @@ T read_be(const unsigned char* bytes) {
     return replace;
 }
 
+[[nodiscard]] inline TradeMessage decode_trade(const unsigned char* msg) {
+    TradeMessage trade{};
+    trade.stockLocate = read_be<std::uint16_t>(msg + 1);
+    trade.trackingNumber = read_be<std::uint16_t>(msg + 3);
+    trade.timeStamp = read_be<std::uint64_t, 6>(msg + 5);
+    trade.orderRef = read_be<std::uint64_t>(msg + 11);
+    trade.side = static_cast<Side>(msg[19]);
+    trade.shares = read_be<std::uint32_t>(msg + 20);
+    std::memcpy(trade.symbol.data(), msg + 24, 8);
+    trade.price = read_be<std::uint32_t>(msg + 32);
+    trade.matchNumber = read_be<std::uint64_t>(msg + 36);
+    return trade;
+}
+
+[[nodiscard]] inline CrossTradeMessage decode_cross_trade(const unsigned char* msg) {
+    CrossTradeMessage cross{};
+    cross.stockLocate = read_be<std::uint16_t>(msg + 1);
+    cross.trackingNumber = read_be<std::uint16_t>(msg + 3);
+    cross.timeStamp = read_be<std::uint64_t, 6>(msg + 5);
+    cross.shares = read_be<std::uint64_t>(msg + 11);
+    std::memcpy(cross.symbol.data(), msg + 19, 8);
+    cross.crossPrice = read_be<std::uint32_t>(msg + 27);
+    cross.matchNumber = read_be<std::uint64_t>(msg + 31);
+    cross.crossType = static_cast<char>(msg[39]);
+    return cross;
+}
+
 namespace itch {
 
+// P and Q are decoded only for handlers that have an on() for them, so handlers that
+// ignore trades pay nothing. They return false: they are not book events, and keeping
+// them out of the count keeps ns/msg comparable with earlier runs.
 template <typename Handler>
 inline bool dispatch(const unsigned char type, const unsigned char* message, Handler& h) {
     switch (type) {
+        case 'P':
+            if constexpr (requires { h.on(std::declval<const TradeMessage&>()); }) h.on(decode_trade(message));
+            return false;
+        case 'Q':
+            if constexpr (requires { h.on(std::declval<const CrossTradeMessage&>()); }) h.on(decode_cross_trade(message));
+            return false;
         case 'R': h.on(decode_stock_directory(message)); return false;
         case 'A': h.on(decode_add_order(message)); return true;
         case 'F': h.on(decode_add_order_mpid(message)); return true;

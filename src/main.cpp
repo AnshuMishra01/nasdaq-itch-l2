@@ -1,10 +1,12 @@
 #include "core/message.h"
 #include "decode.h"
+#include "parse.h"
 #include "measure.h"
 #include "message_decode.h"
 #include "struct_sizes.h"
 #include "handlers/book_handler.h"
 #include "handlers/combined_handler.h"
+#include "handlers/verify_handler.h"
 
 #include <array>
 #include <cstdint>
@@ -13,6 +15,8 @@
 #include <chrono>
 #include <iomanip>
 #include <iostream>
+#include <memory>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -60,67 +64,12 @@ int main(int argc, char* argv[]) {
             return 1;
         }
 
-        const std::array<std::uint8_t, 256> msg_sizes = [] {
-            std::array<std::uint8_t, 256> a{};
-            a[static_cast<unsigned char>('S')] = 12; a[static_cast<unsigned char>('R')] = 39;
-            a[static_cast<unsigned char>('H')] = 25; a[static_cast<unsigned char>('Y')] = 20;
-            a[static_cast<unsigned char>('L')] = 26; a[static_cast<unsigned char>('V')] = 35;
-            a[static_cast<unsigned char>('K')] = 28; a[static_cast<unsigned char>('A')] = 36;
-            a[static_cast<unsigned char>('F')] = 40; a[static_cast<unsigned char>('E')] = 31;
-            a[static_cast<unsigned char>('X')] = 23; a[static_cast<unsigned char>('D')] = 19;
-            a[static_cast<unsigned char>('U')] = 35; a[static_cast<unsigned char>('P')] = 44;
-            a[static_cast<unsigned char>('W')] = 12; a[static_cast<unsigned char>('h')] = 21;
-            a[static_cast<unsigned char>('C')] = 36; a[static_cast<unsigned char>('Q')] = 40;
-            a[static_cast<unsigned char>('B')] = 19; a[static_cast<unsigned char>('I')] = 50;
-            a[static_cast<unsigned char>('N')] = 20; a[static_cast<unsigned char>('J')] = 35;
-            return a;
-        }();
-
-        const std::size_t bufferSize = buffer.size();
-
+        // framing loop lives in parse.h, shared with the M9 benchmark
         auto parse_file = [&](auto &handler, int &processed, std::string &error_msg) -> bool {
-            std::size_t pos = 0;
-            bool had_error = false;
-            const bool process_full = (count <= 0);
-            processed = 0;
-            while (pos + 2 <= bufferSize && (process_full || processed < count)) {
-                const int len = (static_cast<std::uint8_t>(buffer[pos]) << 8) + static_cast<std::uint8_t>(buffer[pos + 1]);
-                if (len < 1) {
-                    had_error = true;
-                    error_msg = "Invalid length";
-                    break;
-                }
-
-                const std::size_t msgStart = pos + 2;
-                if (msgStart + static_cast<std::size_t>(len) > bufferSize) {
-                    had_error = true;
-                    error_msg = "Message length exceeds buffer";
-                    break;
-                }
-
-                unsigned char* message = buffer.data() + msgStart;
-                const unsigned char type = message[0];
-                const std::uint8_t expected_u = msg_sizes[type];
-                if (expected_u == 0) {
-                    had_error = true;
-                    error_msg = "Unknown message type";
-                    break;
-                }
-
-                const std::size_t expected = static_cast<std::size_t>(expected_u);
-                if (expected != static_cast<std::size_t>(len)) {
-                    had_error = true;
-                    error_msg = "Size mismatch";
-                    break;
-                }
-
-                if (itch::dispatch(type, message, handler)) {
-                    processed++;
-                }
-
-                pos = msgStart + static_cast<std::size_t>(len);
-            }
-            return !had_error;
+            const itch::ParseResult r = itch::parse_buffer(buffer.data(), buffer.size(), handler, count);
+            processed = static_cast<int>(r.processed);
+            if (!r.ok) error_msg = r.error;
+            return r.ok;
         };
 
         // helper: timed runner that executes a callable and returns ok + duration
@@ -212,8 +161,64 @@ int main(int argc, char* argv[]) {
                 handler.print_top("AAPL", outf);
                 print_timing(outf, dur, processed);
             }
+        } else if (mode == "verify") {
+            // M7: store-vs-book cross-check at checkpoints and at the end, trade prices
+            // to compare with published data, and a state hash for determinism.
+            // optional argv[5]: expected combined hash (hex); exit code 2 if it differs
+            auto verifier = std::make_unique<itch::VerifyHandler>();
+            if (!parse_file(*verifier, processed, error_msg)) { std::cout << "Stop reason: error: " << error_msg << '\n'; return 1; }
+            const itch::BookHandler& book = verifier->book;
+
+            std::ostringstream out;
+            out << "Store vs book cross-check (every " << verifier->every << " messages):\n";
+            bool all_ok = true;
+            for (const auto& [at, r] : verifier->checkpoints) {
+                out << "  after " << at << " msgs:\n";
+                itch::BookHandler::print_verify(r, out);
+                all_ok = all_ok && r.ok();
+            }
+            const itch::VerifyResult final_check = book.verify_levels();
+            out << "  end of file:\n";
+            itch::BookHandler::print_verify(final_check, out);
+            all_ok = all_ok && final_check.ok();
+            out << "  overall: " << (all_ok ? "PASS" : "FAIL") << "\n\n";
+
+            itch::BookHandler::print_anomalies(book, out);
+            out << '\n';
+            book.print_trades({"AAPL", "MSFT", "AMZN", "INTC", "CSCO"}, out);
+            out << '\n';
+
+            const auto h = book.state_hash();
+            out << std::hex << std::setfill('0')
+                << "State hash:\n"
+                << "  book     = " << std::setw(16) << h.book << '\n'
+                << "  store    = " << std::setw(16) << h.store << '\n'
+                << "  trades   = " << std::setw(16) << h.trades << '\n'
+                << "  combined = " << std::setw(16) << h.combined << '\n'
+                << std::dec << std::setfill(' ');
+
+            int rc = all_ok ? 0 : 1;
+            if (argc >= 6) {
+                const std::uint64_t expected = std::stoull(argv[5], nullptr, 16);
+                const bool same = expected == h.combined;
+                out << "  expected = " << argv[5] << (same ? "  MATCH\n" : "  MISMATCH\n");
+                if (!same) rc = 2;
+            }
+
+            std::string outpath = "metrics.txt";
+            if (argc >= 4) outpath = argv[3];
+            if (outpath == "-") {
+                std::cout << out.str();
+            } else {
+                std::ofstream outf(outpath);
+                if (!outf) { std::cout << "Failed to open output file: " << outpath << '\n'; return 1; }
+                outf << out.str();
+                std::cout << "Wrote " << outpath << " (" << (all_ok ? "PASS" : "FAIL") << ", hash "
+                          << std::hex << h.combined << std::dec << ")\n";
+            }
+            return rc;
         } else {
-            std::cout << "Unknown mode: " << mode << " (expected: both, book, stats, print)\n";
+            std::cout << "Unknown mode: " << mode << " (expected: both, book, stats, print, verify)\n";
             return 1;
         }
         // end try

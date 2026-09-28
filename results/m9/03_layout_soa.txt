@@ -1,0 +1,22 @@
+M9 order-store experiment: 03_layout_soa
+date:     2026-09-27 14:52:37
+file:     data/12302019.NASDAQ_ITCH50.itch50.sample
+what:     01 with keys and values in separate arrays
+change:   vs 01: layout AoS -> SoA
+store:    capacity 2097152 slots, 40.0 MB, rehashes 0, rejected refs 0, probe distance mean 0.00 max 1 (at end of run; peak live orders 27221)
+
+Timing (ns/msg, 3 reps interleaved with the other variants)
+  store + books: 80.9 88.3 78.6   median 80.9
+  store only:    39.2 37.7 35.7   median 37.7
+  floor:         22.0 22.4 23.3   median 22.4
+  store cost (store only - floor): 15.3 ns/msg
+  vs 00_unordered_map: store+books -51.1%, store cost -78.2%
+
+Correctness
+  state hash:   96fd73902096c354  MATCH golden
+  store hash:   4c93cee6c8b6ed03  same as baseline, same without books
+  anomalies:    0 (7 store counters + level_missing + level_underflow)
+  crossed:      2 (baseline 2, PNRL halted)
+  cross-check:
+  PASS  orders=27197 levels=23162 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  VERDICT:      CORRECT

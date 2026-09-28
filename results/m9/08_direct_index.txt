@@ -1,0 +1,22 @@
+M9 order-store experiment: 08_direct_index
+date:     2026-09-27 14:52:40
+file:     data/12302019.NASDAQ_ITCH50.itch50.sample
+what:     vector indexed by order ref (memory grows with the largest ref, not live orders)
+change:   reference point: no hashing at all
+store:    104.0 MB (at end of run; peak live orders 27221)
+
+Timing (ns/msg, 3 reps interleaved with the other variants)
+  store + books: 71.1 71.7 74.5   median 71.7
+  store only:    48.3 31.7 32.3   median 32.3
+  floor:         22.0 22.4 23.3   median 22.4
+  store cost (store only - floor): 9.9 ns/msg
+  vs 00_unordered_map: store+books -56.7%, store cost -85.9%
+
+Correctness
+  state hash:   96fd73902096c354  MATCH golden
+  store hash:   4c93cee6c8b6ed03  same as baseline, same without books
+  anomalies:    0 (7 store counters + level_missing + level_underflow)
+  crossed:      2 (baseline 2, PNRL halted)
+  cross-check:
+  PASS  orders=27197 levels=23162 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  VERDICT:      CORRECT
