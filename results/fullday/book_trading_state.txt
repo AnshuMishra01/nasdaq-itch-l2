@@ -1,0 +1,39 @@
+Anomalies:
+  exec_unknown=0
+  cancel_unknown=0
+  delete_unknown=0
+  replace_orig_unknown=0
+  add_existing=0
+  over_execution=0
+  over_cancel=0
+  peak_live=1924078
+Book invariants:
+  level_missing=0
+  level_underflow=0
+  crossed_updates=4777
+  crossed_while_trading=0  (must be 0)
+  crossed_not_trading=4767  (halted / paused / quotation only: allowed)
+  crossed_settling=10  (cross published, its executions/deletes still arriving: allowed)
+  crosses_settled=26, longest settle 37799238.549 ms
+    settled after > 1 ms: QUIK state T from 10:25:39.049 to 10:25:39.050
+    settled after > 1 ms: MKD state T from 09:30:00.397 to 10:45:07.435
+    settled after > 1 ms: DNJR state H from 16:00:00.205 to 16:00:00.206
+    settled after > 1 ms: SVA state H from 16:00:00.254 to 16:00:00.256
+    settled after > 1 ms: IPDN state H from 16:00:00.538 to 16:00:00.550
+    settled after > 1 ms: PNRL state H from 09:30:00.812 to 20:00:00.050
+Top of book AAPL (locate 13), best first:
+  asks:
+  bids:
+Timing:
+  elapsed_ms=69626 ms
+  messages=263241937
+  msgs_per_sec=3780766.91
+  ns_per_msg=264.50
+IO:
+  io=chunked
+  setup_ms=0  (load: read whole file; mmap: map only; chunked: none)
+  total_ms=69626
+  total_ns_per_msg=264.50
+  peak_working_set_mb=479.32  (includes mapped file pages)
+  peak_private_mb=476.68
+  page_faults=123023

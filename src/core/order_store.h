@@ -5,6 +5,8 @@
 #include <bit>
 #include <cstddef>
 #include <cstdint>
+#include <cstdio>
+#include <cstdlib>
 #include <unordered_map>
 #include <utility>
 #include <vector>
@@ -59,7 +61,11 @@ enum class Erase : std::uint8_t {
     Tombstone,     // mark deleted; rebuild when live + tombstones pass the load limit
 };
 
-template <Layout L, EmptyMark M, HashFn H, Erase D, std::size_t InitialCapacity = (std::size_t{1} << 21)>
+// Grow = false fixes the capacity (for experiments that need a known table size). The table
+// must then never fill completely: add() aborts rather than loop forever looking for a slot.
+// MaxLoadPercent: grow (or, fixed-size, clean tombstones) once live + tombstones pass this load.
+template <Layout L, EmptyMark M, HashFn H, Erase D, std::size_t InitialCapacity = (std::size_t{1} << 21), bool Grow = true,
+          unsigned MaxLoadPercent = 50>
 class FlatStore {
     struct Slot {
         std::uint64_t key;
@@ -201,9 +207,17 @@ public:
         }
         put(i, key, v);
         ++size_;
-        if ((size_ + tombs_) * 2 > cap_) {
-            // mostly tombstones: clean at the same size; otherwise grow
-            rehash(size_ * 4 <= cap_ ? cap_ : cap_ * 2);
+        if constexpr (Grow) {
+            if ((size_ + tombs_) * 100 > cap_ * MaxLoadPercent) {
+                // mostly tombstones: clean at the same size; otherwise grow
+                rehash(size_ * 200 <= cap_ * MaxLoadPercent ? cap_ : cap_ * 2);
+            }
+        } else {
+            if ((size_ + tombs_) * 100 > cap_ * MaxLoadPercent && tombs_ > size_) rehash(cap_); // drop tombstones, same size
+            if (size_ + tombs_ + 1 >= cap_) {
+                std::fprintf(stderr, "FlatStore: fixed-size table full (%zu of %zu slots)\n", size_ + tombs_, cap_);
+                std::abort();
+            }
         }
     }
 
@@ -303,8 +317,16 @@ public:
     std::size_t memory_bytes() const { return values_.size() * sizeof(Order) + present_.size(); }
 };
 
-// The store the program uses, chosen from the measurements in results/m9/ (see DECISION.md):
-// flat AoS slots, key 0 = empty, identity hash, backward-shift delete, 2^21 slots to start.
-using Store = FlatStore<Layout::AoS, EmptyMark::SentinelKey, HashFn::Identity, Erase::BackwardShift>;
+// The store the program uses. M9 (results/m9/) picked the layout; the full-day sweep
+// (results/scale/fullday/summary.md) picked the size and the guard:
+//   identity hash, 2^24 slots (384 MB), growing once 25% full.
+// Identity is ~32% faster at the median and better through p99.9 at this size, but
+// degrades sharply with load (p99.9 2.2x worse than Fibonacci at 23% full, 3.6x slower
+// on average at 46%, unusable at 92%). The 25% guard keeps it on the good side: 2^24 slots
+// is 8.7x the full-day peak of 1,924,078 live orders, and the table doubles long before
+// clustering sets in. If the order count were unpredictable, Fibonacci would be the safer
+// default: slower, but its worst case stays bounded at any load.
+using Store = FlatStore<Layout::AoS, EmptyMark::SentinelKey, HashFn::Identity, Erase::BackwardShift,
+                        std::size_t{1} << 24, /*Grow=*/true, /*MaxLoadPercent=*/25>;
 
 } // namespace itch

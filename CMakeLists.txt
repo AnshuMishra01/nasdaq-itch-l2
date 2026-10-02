@@ -9,6 +9,13 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 
 # for build we will use default as release
+# Link the C++ runtime into every executable. Without this, Windows loads whichever
+# libstdc++-6.dll comes first on PATH; Git for Windows ships an older, incompatible one
+# (mingw64/bin), and a UCRT64 binary that picks it up segfaults or silently misbehaves.
+if(MINGW)
+    add_link_options(-static)
+endif()
+
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
@@ -60,8 +67,11 @@ add_test(NAME decode_tests COMMAND decode_tests)
 set(ITCH_SAMPLE "${CMAKE_SOURCE_DIR}/data/12302019.NASDAQ_ITCH50.itch50.sample")
 set(ITCH_SAMPLE_HASH "96fd73902096c354")
 if(EXISTS "${ITCH_SAMPLE}")
-    add_test(NAME sample_verify
-             COMMAND itch_count "${ITCH_SAMPLE}" 0 - verify ${ITCH_SAMPLE_HASH})
+    # once per input mode: all three must build the identical book
+    foreach(io load mmap chunked)
+        add_test(NAME sample_verify_${io}
+                 COMMAND itch_count "${ITCH_SAMPLE}" 0 - verify ${ITCH_SAMPLE_HASH} --io=${io})
+    endforeach()
 endif()
 
 # M9: order-store experiment (writes results/m9/)
@@ -91,3 +101,26 @@ target_compile_options(latency_bench PRIVATE
     -Wconversion -Wsign-conversion
     -Wshadow
 )
+
+# input modes: load / mmap / chunked deliver identical messages
+add_executable(io_tests tests/io_tests.cpp)
+target_include_directories(io_tests PRIVATE src)
+target_compile_options(io_tests PRIVATE
+    -Wall -Wextra -Wpedantic
+    -Wconversion -Wsign-conversion
+    -Wshadow
+)
+add_test(NAME io_tests COMMAND io_tests)
+
+# full-day scale experiments: I/O split, store sweep, book shape (writes results/scale/)
+add_executable(scale_bench src/tools/scale_bench.cpp)
+target_include_directories(scale_bench PRIVATE src)
+target_compile_options(scale_bench PRIVATE
+    -Wall -Wextra -Wpedantic
+    -Wconversion -Wsign-conversion
+    -Wshadow
+)
+
+# which messages remove matched orders at the 09:30 opening cross (results/fullday/auction.md)
+add_executable(open_cross src/tools/open_cross.cpp)
+target_include_directories(open_cross PRIVATE src)

@@ -88,6 +88,18 @@ int main() {
     run_all<FlatStore<AoS, SentinelKey, Identity, Tombstone, 16>>("AoS/sentinel/identity/tombstone");
     run_all<FlatStore<SoA, MetaByte, Fibonacci, Tombstone, 16>>("SoA/metabyte/fibonacci/tombstone");
     run_all<Store>("Store (the default)");
+    // the default's design at a size the tests can fill: identity, grow at 25% load
+    run_all<FlatStore<AoS, SentinelKey, Identity, BackwardShift, 16, true, 25>>("identity, 25% guard");
+    {   // the guard: a 64-slot table holds 16 entries (25%) and doubles on the 17th
+        FlatStore<AoS, SentinelKey, Identity, BackwardShift, 64, true, 25> g;
+        for (std::uint64_t k = 1; k <= 16; ++k) g.add(k, Order{1, 1, 1, Side::Buy});
+        const bool held = g.capacity() == 64;
+        g.add(17, Order{1, 1, 1, Side::Buy});
+        if (!held || g.capacity() != 128 || g.size() != 17 || !g.find(1) || !g.find(17)) {
+            ++failures;
+            std::cout << "FAIL 25% guard: capacity " << g.capacity() << " after 17 adds\n";
+        }
+    }
 
     // Backward shift across the end of the table. Identity hash, 16 slots:
     //   14 -> slot 14 (home 14), 30 -> slot 15 (home 14), 16 -> slot 0 (home 0)

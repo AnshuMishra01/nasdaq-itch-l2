@@ -1,0 +1,17 @@
+RESULT fibonacci21fixed 340.2 4.34 890 119 123 0.91 final_capacity=2097152 rehashes=0
+RESULT identity25 90.0 0.03 229 840 843 0.06 final_capacity=33554432 rehashes=0
+RESULT fibonacci25 149.5 0.02 5 840 843 0.06 final_capacity=33554432 rehashes=0
+LAT identity23fixed run 1 p50 176 p99 1154 p99.9 6155 p99.99 29752 max 16338173 mean 251.0 hash 5cdfcc85f1d6976a
+LAT identity23fixed run 2 p50 176 p99 1090 p99.9 6155 p99.99 28726 max 14281455 mean 241.2 hash 5cdfcc85f1d6976a
+LATMERGED identity23fixed p50 175.8 p90 448.4 p99 1089.6 p99.9 6155.2 p99.99 29752.0 max 16338172.5 mean 246.1 overhead 40.1
+LAT fibonacci23fixed run 1 p50 232 p99 993 p99.9 2821 p99.99 21544 max 12924336 mean 282.0 hash 5cdfcc85f1d6976a
+LAT fibonacci23fixed run 2 p50 248 p99 1154 p99.9 2949 p99.99 25648 max 81158437 mean 313.6 hash 5cdfcc85f1d6976a
+LATMERGED fibonacci23fixed p50 248.0 p90 496.4 p99 1089.6 p99.9 2820.9 p99.99 23596.3 max 81158436.9 mean 297.8 overhead 40.1
+LAT identity24fixed run 1 p50 168 p99 897 p99.9 2564 p99.99 17441 max 5160778 mean 216.0 hash 5cdfcc85f1d6976a
+LAT identity24fixed run 2 p50 168 p99 897 p99.9 2436 p99.99 20518 max 13666642 mean 216.0 hash 5cdfcc85f1d6976a
+LATMERGED identity24fixed p50 167.8 p90 416.3 p99 897.2 p99.9 2436.1 p99.99 19492.5 max 13666642.1 mean 216.0 overhead 40.1
+LAT fibonacci24fixed run 1 p50 248 p99 1154 p99.9 2693 p99.99 11798 max 4471466 mean 305.9 hash 5cdfcc85f1d6976a
+LAT fibonacci24fixed run 2 p50 232 p99 1090 p99.9 2949 p99.99 22570 max 9625749 mean 285.4 hash 5cdfcc85f1d6976a
+LATMERGED fibonacci24fixed p50 248.0 p90 496.4 p99 1089.6 p99.9 2820.9 p99.99 15388.7 max 9625748.9 mean 295.6 overhead 40.1
+DONE
+DNF identity21fixed: stopped by hand at 21:30 after ~39 min without finishing (store only, fixed 2^21 slots, ~92% full at peak). Fibonacci at the same size finished the whole day in ~2 min (340.2 ns/msg).

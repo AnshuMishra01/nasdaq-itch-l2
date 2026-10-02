@@ -1,0 +1,13 @@
+opening crosses with shares > 0: 3086, crossed shares 19896150
+same-stock messages 09:29:58-09:30:03, by time relative to that stock's Q (count / shares):
+offset                            E          C printable=N          C printable=Y          D
+< -1s                34       13887          0           0          0           0       1396
+-1s..-1ms           341       55527          0           0          2         106       4604
+-1ms..-1us            0           0          0           0          0           0          4
+-1us..0               0           0          0           0          0           0          0
+0 (same ns)           0           0        860      344232          0           0          0
+0..1us                0           0          0           0          0           0          1
+1us..1ms            372       30868          0           0          1         900       8593
+1ms..1s            2638      429516          0           0        126       69481      22651
+> 1s               1120      163529          0           0         48       35979      15404
+all C printable=N shares near the crosses: 344232 (1.7% of crossed shares, 0.9% of 2x)

@@ -102,3 +102,14 @@ struct CrossTradeMessage {
     std::uint64_t matchNumber;
     std::array<char, 8> symbol;
 };
+
+// 'H': stock trading action. tradingState 'H' halted, 'P' paused, 'Q' quotation only
+// (orders accepted, no matching), 'T' trading. Only in 'T' must the book be uncrossed.
+struct TradingActionMessage {
+    char tradingState;
+    std::uint16_t stockLocate;
+    std::uint16_t trackingNumber;
+    std::uint64_t timeStamp;
+    std::array<char, 8> symbol;
+    std::array<char, 4> reason;
+};

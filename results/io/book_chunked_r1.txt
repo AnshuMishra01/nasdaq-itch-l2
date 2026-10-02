@@ -1,0 +1,40 @@
+Anomalies:
+  exec_unknown=0
+  cancel_unknown=0
+  delete_unknown=0
+  replace_orig_unknown=0
+  add_existing=0
+  over_execution=0
+  over_cancel=0
+  peak_live=1769537
+Book invariants:
+  level_missing=0
+  level_underflow=0
+  crossed_updates=3623
+Top of book AAPL (locate 13), best first:
+  asks:
+       290.4100  shares=    100  orders=1
+       290.4200  shares=    300  orders=3
+       290.4300  shares=    700  orders=4
+       290.4400  shares=    300  orders=3
+       290.4500  shares=    400  orders=4
+  bids:
+       290.3800  shares=      1  orders=1
+       290.3700  shares=      5  orders=1
+       290.3600  shares=    200  orders=2
+       290.3500  shares=    477  orders=6
+       290.3400  shares=    400  orders=4
+Timing:
+  elapsed_ms=125220 ms
+  messages=128645785
+  msgs_per_sec=1027356.42
+  ns_per_msg=973.37
+IO:
+  io=chunked
+  setup_ms=0  (load: read whole file; mmap: map only; chunked: none)
+  total_ms=125220
+  total_ns_per_msg=973.37
+  peak_working_set_mb=255.42  (includes mapped file pages)
+  peak_private_mb=252.17
+  page_faults=67314
+  truncated_tail_bytes=37

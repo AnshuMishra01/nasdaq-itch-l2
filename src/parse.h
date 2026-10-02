@@ -22,6 +22,8 @@ struct ParseResult {
     bool ok = true;
     std::uint64_t processed = 0; // messages for which dispatch returned true
     const char* error = "";
+    std::size_t consumed = 0;    // bytes of complete messages parsed
+    std::size_t trailing = 0;    // bytes of an incomplete message at the very end of the input
 };
 
 // Called around every dispatch (decode + handler). The default does nothing and compiles
@@ -33,6 +35,11 @@ struct NoProbe {
 
 // Walks a length-prefixed ITCH buffer and dispatches every message to `handler`.
 // count > 0 stops after that many processed messages; count <= 0 means the whole buffer.
+//
+// A message cut off by the end of the buffer is not an error: parsing stops before it,
+// `consumed` says how far it got and `trailing` how many bytes were left over. A chunked
+// reader carries those bytes into the next chunk; at the true end of a file they mean the
+// file itself is truncated, which the caller should report.
 template <typename Handler, typename Probe = NoProbe>
 ParseResult parse_buffer(const unsigned char* data, std::size_t size, Handler& handler, long long count = 0,
                          Probe probe = {}) {
@@ -43,7 +50,7 @@ ParseResult parse_buffer(const unsigned char* data, std::size_t size, Handler& h
         const std::size_t len = (std::size_t{data[pos]} << 8) | data[pos + 1];
         if (len < 1) { r.ok = false; r.error = "Invalid length"; break; }
         const std::size_t start = pos + 2;
-        if (start + len > size) { r.ok = false; r.error = "Message length exceeds buffer"; break; }
+        if (start + len > size) break; // incomplete message at the end: see `trailing`
         const unsigned char* message = data + start;
         const unsigned char type = message[0];
         const std::size_t expected = kMsgSizes[type];
@@ -55,6 +62,9 @@ ParseResult parse_buffer(const unsigned char* data, std::size_t size, Handler& h
         if (counted) ++r.processed;
         pos = start + len;
     }
+    r.consumed = pos;
+    const bool stopped_by_count = !full && r.processed >= static_cast<std::uint64_t>(count);
+    if (r.ok && !stopped_by_count) r.trailing = size - pos;
     return r;
 }
 

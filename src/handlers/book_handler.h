@@ -54,6 +54,17 @@ struct BasicBookHandler {
     std::vector<Book> books = std::vector<Book>(65536);
     std::vector<std::array<char, 8>> symbols = std::vector<std::array<char, 8>>(65536);
     std::vector<TradeState> trades = std::vector<TradeState>(65536);
+    // last trading action per stock (H message): 'T' trading, 'H' halted, 'P' paused,
+    // 'Q' quotation only; 0 = no H seen yet (Nasdaq sends one per stock before the day starts)
+    std::vector<char> trading_state = std::vector<char>(65536, 0);
+    // After a cross (Q), Nasdaq keeps publishing the cross's executions and deleting unfilled
+    // remainders for a fraction of a millisecond, while the stock is already in state T. The
+    // book is legitimately crossed until that settles: from the Q until the first update that
+    // leaves the book uncrossed. 0 = not settling, else the Q's timestamp.
+    std::vector<std::uint64_t> settling_since = std::vector<std::uint64_t>(65536, 0);
+    // Settling is only excused this long after the cross. Every real settle seen on the full
+    // day took 0.2-12 ms; a book still crossed 100 ms after its cross while trading is a violation.
+    static constexpr std::uint64_t kSettleLimitNs = 100'000'000;
 
     std::uint64_t peak_live = 0;
     std::uint64_t removals = 0;
@@ -70,7 +81,16 @@ struct BasicBookHandler {
     // book invariants (M5): all must be zero
     std::uint64_t level_missing = 0;   // order says price P, book has no level at P
     std::uint64_t level_underflow = 0; // removed more shares than the level held
-    std::uint64_t crossed_updates = 0; // updates that left best_bid >= best_ask
+    std::uint64_t crossed_updates = 0;        // updates that left best_bid >= best_ask (any state)
+    std::uint64_t crossed_while_trading = 0;  // ... while the stock was in state T: must be zero
+    std::uint64_t crossed_not_trading = 0;    // ... while halted / paused / quotation only: allowed
+    std::uint64_t crossed_settling = 0;       // ... while a cross was still settling: allowed
+    std::uint64_t settles = 0, max_settle_ns = 0; // how long settling took (must stay tiny)
+    struct SettleExample { std::uint16_t locate; char state; std::uint64_t since, until; };
+    std::vector<SettleExample> long_settles; // settles over 1 ms, for inspection
+    struct CrossedExample { std::uint16_t locate; char state; std::uint32_t bid, ask; std::uint64_t ts; };
+    std::vector<CrossedExample> crossed_trading_examples; // first few, for debugging
+    std::uint64_t last_ts = 0;                // timestamp of the message being applied
 
     // price levels created or erased (a vector insert/erase); M8 relates these to the tail
     std::uint64_t level_changes = 0;
@@ -85,7 +105,31 @@ struct BasicBookHandler {
         book.add(o.side, o.price, o.shares);
         level_changes += book.levels(o.side).size() != before;
         // Only adding liquidity can cross a book, so this checks every update that could.
-        if (book.crossed()) crossed_updates++;
+        if (book.crossed()) {
+            crossed_updates++;
+            const char st = trading_state[o.locate];
+            if (st != 'T') {
+                crossed_not_trading++;
+            } else if (settling_since[o.locate] && last_ts - settling_since[o.locate] <= kSettleLimitNs) {
+                crossed_settling++;
+            } else {
+                crossed_while_trading++;
+                if (crossed_trading_examples.size() < 20)
+                    crossed_trading_examples.push_back({o.locate, st, book.bids.back().price, book.asks.back().price, last_ts});
+            }
+        } else {
+            end_settling(o.locate);
+        }
+    }
+
+    // A cross has settled once its stock's book is seen uncrossed; record how long it took.
+    void end_settling(std::uint16_t locate) {
+        if (const std::uint64_t since = settling_since[locate]) {
+            ++settles;
+            if (last_ts > since && last_ts - since > max_settle_ns) max_settle_ns = last_ts - since;
+            if (last_ts > since + 1'000'000 && long_settles.size() < 20) long_settles.push_back({locate, trading_state[locate], since, last_ts});
+            settling_since[locate] = 0;
+        }
     }
 
     void book_reduce(const Order& o, std::uint32_t shares, bool order_gone) {
@@ -99,6 +143,7 @@ struct BasicBookHandler {
             case ReduceResult::MissingLevel: level_missing++; break;
             case ReduceResult::Underflow: level_underflow++; break;
         }
+        if (settling_since[o.locate] && !book.crossed()) end_settling(o.locate);
     }
 
     void add_order(std::uint64_t ref, const Order& info) {
@@ -153,19 +198,23 @@ struct BasicBookHandler {
     void on(const StockDirectoryMessage& m) { symbols[m.stockLocate] = m.symbol; }
 
     void on(const AddOrderMessage& m) {
+        last_ts = m.timeStamp;
         add_order(m.orderRef, Order{m.price, m.shares, m.stockLocate, m.side});
     }
 
     void on(const AddOrderMPIDMessage& m) {
+        last_ts = m.timeStamp;
         add_order(m.orderRef, Order{m.price, m.shares, m.stockLocate, m.side});
     }
 
     void on(const OrderExecutedMessage& m) {
+        last_ts = m.timeStamp;
         reduce_order(m.orderRef, m.executedShares, anomaly_exec_unknown, anomaly_over_execution,
                      Print::AtOrderPrice, 0, m.timeStamp);
     }
 
     void on(const OrderExecutedWithPriceMessage& m) {
+        last_ts = m.timeStamp;
         // printable 'N': the shares are reported in aggregate elsewhere (e.g. a cross's Q)
         const Print print = m.printable == 'Y' ? Print::AtPrice : Print::None;
         reduce_order(m.orderRef, m.executedShares, anomaly_exec_unknown, anomaly_over_execution,
@@ -176,7 +225,14 @@ struct BasicBookHandler {
     void on(const TradeMessage& m) { record_trade(m.stockLocate, m.price, m.shares, m.timeStamp); }
 
     // Q: cross result. Informational only: it names no orders, so the book is untouched.
+    // H: trading state per stock; the crossed-book check only applies in state T.
+    void on(const TradingActionMessage& m) { trading_state[m.stockLocate] = m.tradingState; }
+
     void on(const CrossTradeMessage& m) {
+        if constexpr (WithBooks) {
+            // settle only if the cross left the book crossed (matched orders not yet removed)
+            if (books[m.stockLocate].crossed() && !settling_since[m.stockLocate]) settling_since[m.stockLocate] = m.timeStamp;
+        }
         TradeState& t = trades[m.stockLocate];
         if (m.crossType == 'O') t.open_cross = m.crossPrice;
         if (m.crossType == 'C') {
@@ -186,10 +242,12 @@ struct BasicBookHandler {
     }
 
     void on(const OrderCancelMessage& m) {
+        last_ts = m.timeStamp;
         reduce_order(m.orderRef, m.cancelledShares, anomaly_cancel_unknown, anomaly_over_cancel);
     }
 
     void on(const OrderDeleteMessage& m) {
+        last_ts = m.timeStamp;
         Order* o = store.find(m.orderRef);
         if (!o) {
             anomaly_delete_unknown++;
@@ -199,6 +257,7 @@ struct BasicBookHandler {
     }
 
     void on(const OrderReplaceMessage& m) {
+        last_ts = m.timeStamp;
         // Replace: remove orig, add new with new shares/price but keep side/locate from orig
         Order* o = store.find(m.origRef);
         if (!o) {
@@ -439,6 +498,17 @@ struct BasicBookHandler {
         out << "  level_missing=" << h.level_missing << '\n';
         out << "  level_underflow=" << h.level_underflow << '\n';
         out << "  crossed_updates=" << h.crossed_updates << '\n';
+        out << "  crossed_while_trading=" << h.crossed_while_trading << "  (must be 0)\n";
+        out << "  crossed_not_trading=" << h.crossed_not_trading << "  (halted / paused / quotation only: allowed)\n";
+        out << "  crossed_settling=" << h.crossed_settling << "  (cross published, its executions/deletes still arriving: allowed)\n";
+        out << "  crosses_settled=" << h.settles << ", longest settle " << std::fixed << std::setprecision(3)
+            << static_cast<double>(h.max_settle_ns) / 1e6 << " ms\n" << std::defaultfloat;
+        for (const auto& s : h.long_settles)
+            out << "    settled after > 1 ms: " << h.symbol_of(s.locate) << " state " << (s.state ? s.state : '?') << " from "
+                << fmt_ns(s.since) << " to " << fmt_ns(s.until) << '\n';
+        for (const auto& e : h.crossed_trading_examples)
+            out << "    crossed while trading: " << h.symbol_of(e.locate) << " bid " << fmt_price(e.bid) << " ask "
+                << fmt_price(e.ask) << " at " << fmt_ns(e.ts) << '\n';
     }
 };
 

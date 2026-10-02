@@ -136,9 +136,21 @@ T read_be(const unsigned char* bytes) {
     return cross;
 }
 
+// 'H' (25 bytes): locate 1, tracking 3, timestamp 5 (6), stock 11 (8), state 19, reserved 20, reason 21 (4)
+[[nodiscard]] inline TradingActionMessage decode_trading_action(const unsigned char* msg) {
+    TradingActionMessage h{};
+    h.stockLocate = read_be<std::uint16_t>(msg + 1);
+    h.trackingNumber = read_be<std::uint16_t>(msg + 3);
+    h.timeStamp = read_be<std::uint64_t, 6>(msg + 5);
+    std::memcpy(h.symbol.data(), msg + 11, 8);
+    h.tradingState = static_cast<char>(msg[19]);
+    std::memcpy(h.reason.data(), msg + 21, 4);
+    return h;
+}
+
 namespace itch {
 
-// P and Q are decoded only for handlers that have an on() for them, so handlers that
+// P, Q and H are decoded only for handlers that have an on() for them, so handlers that
 // ignore trades pay nothing. They return false: they are not book events, and keeping
 // them out of the count keeps ns/msg comparable with earlier runs.
 template <typename Handler>
@@ -149,6 +161,9 @@ inline bool dispatch(const unsigned char type, const unsigned char* message, Han
             return false;
         case 'Q':
             if constexpr (requires { h.on(std::declval<const CrossTradeMessage&>()); }) h.on(decode_cross_trade(message));
+            return false;
+        case 'H':
+            if constexpr (requires { h.on(std::declval<const TradingActionMessage&>()); }) h.on(decode_trading_action(message));
             return false;
         case 'R': h.on(decode_stock_directory(message)); return false;
         case 'A': h.on(decode_add_order(message)); return true;

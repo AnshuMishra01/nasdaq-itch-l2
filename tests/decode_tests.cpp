@@ -250,6 +250,25 @@ void test_trade_and_cross() {
     CHECK_EQ(c.crossType, 'C');
 }
 
+void test_trading_action() {
+    std::array<unsigned char, 25> h{};
+    h[0] = 'H';
+    put(h, 1, 6286, 2);
+    put(h, 3, 9, 2);
+    put(h, 5, kMaxTs, 6);
+    put_text(h, 11, "ABCDEFGH", 8);
+    h[19] = 'Q';            // quotation only
+    h[20] = ' ';            // reserved
+    put_text(h, 21, "LUDP", 4);
+    const auto t = decode_trading_action(h.data());
+    CHECK_EQ(t.stockLocate, 6286);
+    CHECK_EQ(t.trackingNumber, 9);
+    CHECK_EQ(t.timeStamp, kMaxTs);
+    CHECK_EQ(symbol_is(t.symbol, "ABCDEFGH"), true);
+    CHECK_EQ(t.tradingState, 'Q');
+    CHECK_EQ(std::string(t.reason.data(), 4), std::string("LUDP"));
+}
+
 // Dispatch routes each type to the right on(); P and Q reach only handlers that want them.
 struct Recorder {
     std::string seen;
@@ -361,6 +380,7 @@ int main() {
     test_executed_with_price();
     test_cancel_delete_replace();
     test_trade_and_cross();
+    test_trading_action();
     test_dispatch();
     test_book();
     test_histogram();

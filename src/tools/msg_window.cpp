@@ -100,6 +100,7 @@ int main(int argc, char* argv[]) {
     while (!past_end) {
         in.read(reinterpret_cast<char*>(buf.data() + have), static_cast<std::streamsize>(buf.size() - have));
         const std::size_t got = static_cast<std::size_t>(in.gcount());
+        if (in.bad()) { std::cout << "read error in " << path << " after " << scanned << " messages\n"; return 1; }
         if (got == 0) break;
         have += got;
 
@@ -138,6 +139,8 @@ int main(int argc, char* argv[]) {
     if (buckets.empty()) {
         out << "NO MESSAGES IN WINDOW.\n";
         if (last_ts < start) out << "The file ends at " << fmt_time(last_ts) << ", before the window starts. Use a full-day file.\n";
+        out.close();
+        if (!out) { std::cout << "failed writing " << outpath << '\n'; return 1; }
         std::cout << "No messages in window; see " << outpath << '\n';
         return 0;
     }
@@ -181,6 +184,8 @@ int main(int argc, char* argv[]) {
     out << "\n  Most frequent: " << winner << " (" << type_name(winner) << ")\n";
     out << "  Q (cross trade) messages in window: " << total[static_cast<unsigned char>('Q')] << '\n';
 
+    out.close();
+    if (!out) { std::cout << "failed writing " << outpath << '\n'; return 1; }
     std::cout << "Wrote " << outpath << " (most frequent removal type: " << winner << ")\n";
     return 0;
 }

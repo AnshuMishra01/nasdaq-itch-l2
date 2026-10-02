@@ -1,0 +1,53 @@
+Top of book AAPL at 10:00:00.000 (best ask and best bid next to the line):
+  ask    286.9100      100 shares    1 orders
+  ask    286.9000      100 shares    1 orders
+  ask    286.8900      100 shares    1 orders
+  ask    286.8700      100 shares    1 orders
+  ask    286.8600        1 shares    1 orders
+  ----------------------------------------
+  bid    286.8300      100 shares    1 orders
+  bid    286.8200      100 shares    1 orders
+  bid    286.8100      200 shares    2 orders
+  bid    286.8000      100 shares    1 orders
+  bid    286.7900      400 shares    3 orders
+
+BBO changes for AAPL from 10:00:00.000 to 10:00:00.100 (5):
+  time                     bid x shares          ask x shares   spread
+  10:00:00.009831422    286.8300 x    100     286.8600 x      3   3.00c
+  10:00:00.010389248    286.8300 x    100     286.8600 x    103   3.00c
+  10:00:00.010826821    286.8200 x    100     286.8600 x    103   4.00c
+  10:00:00.011141305    286.8200 x    100     286.8600 x    102   4.00c
+  10:00:00.060897723    286.8100 x    100     286.8600 x    102   5.00c
+
+BBO changes (best price or its size) over the whole file: 124767189 across 8892 stocks.
+Most active 15, with time-weighted quoted spread during 09:30-16:00 (two-sided time only):
+  symbol    BBO changes   avg spread    two-sided
+  QQQ           1364095       1.16c      100.0%
+  IWM           1215230       1.14c      100.0%
+  SPY           1146229       1.23c      100.0%
+  TQQQ           968143       1.19c      100.0%
+  AMD            675308       1.03c      100.0%
+  URTY           617381       5.43c      100.0%
+  MSFT           600038       1.23c      100.0%
+  SH             555029       1.00c      100.0%
+  XLK            552180       1.02c      100.0%
+  NIO            548839       1.11c      100.0%
+  GDXJ           541136       1.03c      100.0%
+  XLY            476950       1.13c      100.0%
+  XLE            472029       1.01c      100.0%
+  GDX            471047       1.00c      100.0%
+  INTC           453536       1.01c      100.0%
+  AAPL: 424660 BBO changes, time-weighted spread 2.64c
+Timing:
+  elapsed_ms=77689 ms
+  messages=263241937
+  msgs_per_sec=3388389.64
+  ns_per_msg=295.13
+IO:
+  io=chunked
+  setup_ms=0  (load: read whole file; mmap: map only; chunked: none)
+  total_ms=77689
+  total_ns_per_msg=295.13
+  peak_working_set_mb=482.38  (includes mapped file pages)
+  peak_private_mb=479.69
+  page_faults=123844

@@ -1,0 +1,1088 @@
+Store vs book cross-check (every 500000 messages):
+  after 500000 msgs:
+  PASS  orders=5389 levels=3697 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 1000000 msgs:
+  PASS  orders=5860 levels=4000 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 1500000 msgs:
+  PASS  orders=6262 levels=4334 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 2000000 msgs:
+  PASS  orders=6957 levels=4960 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 2500000 msgs:
+  PASS  orders=10076 levels=7789 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 3000000 msgs:
+  PASS  orders=22050 levels=18330 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 3500000 msgs:
+  PASS  orders=54070 levels=39324 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 4000000 msgs:
+  PASS  orders=97902 levels=68769 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 4500000 msgs:
+  PASS  orders=196645 levels=134911 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 5000000 msgs:
+  PASS  orders=264609 levels=171128 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 5500000 msgs:
+  PASS  orders=478082 levels=290230 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 6000000 msgs:
+  PASS  orders=760324 levels=390501 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 6500000 msgs:
+  PASS  orders=992237 levels=482305 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 7000000 msgs:
+  PASS  orders=1268994 levels=590831 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 7500000 msgs:
+  PASS  orders=1591320 levels=679641 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 8000000 msgs:
+  PASS  orders=1635543 levels=698217 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 8500000 msgs:
+  PASS  orders=1625771 levels=695929 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 9000000 msgs:
+  PASS  orders=1630129 levels=700227 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 9500000 msgs:
+  PASS  orders=1632901 levels=702721 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 10000000 msgs:
+  PASS  orders=1643361 levels=708473 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 10500000 msgs:
+  PASS  orders=1646782 levels=710196 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 11000000 msgs:
+  PASS  orders=1651467 levels=712262 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 11500000 msgs:
+  PASS  orders=1653576 levels=713599 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 12000000 msgs:
+  PASS  orders=1662688 levels=716774 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 12500000 msgs:
+  PASS  orders=1666311 levels=719036 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 13000000 msgs:
+  PASS  orders=1669703 levels=720133 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 13500000 msgs:
+  PASS  orders=1671041 levels=720844 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 14000000 msgs:
+  PASS  orders=1676955 levels=721893 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 14500000 msgs:
+  PASS  orders=1690984 levels=728791 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 15000000 msgs:
+  PASS  orders=1694125 levels=731029 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 15500000 msgs:
+  PASS  orders=1695902 levels=732383 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 16000000 msgs:
+  PASS  orders=1699151 levels=734134 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 16500000 msgs:
+  PASS  orders=1698605 levels=733858 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 17000000 msgs:
+  PASS  orders=1698906 levels=733945 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 17500000 msgs:
+  PASS  orders=1703364 levels=734481 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 18000000 msgs:
+  PASS  orders=1699293 levels=733627 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 18500000 msgs:
+  PASS  orders=1684629 levels=728354 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 19000000 msgs:
+  PASS  orders=1664811 levels=723394 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 19500000 msgs:
+  PASS  orders=1671332 levels=724990 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 20000000 msgs:
+  PASS  orders=1674411 levels=726506 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 20500000 msgs:
+  PASS  orders=1675663 levels=727024 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 21000000 msgs:
+  PASS  orders=1675775 levels=727128 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 21500000 msgs:
+  PASS  orders=1652763 levels=724030 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 22000000 msgs:
+  PASS  orders=1653022 levels=724215 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 22500000 msgs:
+  PASS  orders=1638465 levels=711815 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 23000000 msgs:
+  PASS  orders=1660258 levels=718723 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 23500000 msgs:
+  PASS  orders=1670983 levels=720705 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 24000000 msgs:
+  PASS  orders=1678432 levels=722257 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 24500000 msgs:
+  PASS  orders=1683432 levels=724193 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 25000000 msgs:
+  PASS  orders=1685519 levels=724981 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 25500000 msgs:
+  PASS  orders=1686845 levels=725430 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 26000000 msgs:
+  PASS  orders=1688349 levels=726022 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 26500000 msgs:
+  PASS  orders=1689491 levels=726314 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 27000000 msgs:
+  PASS  orders=1691477 levels=726761 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 27500000 msgs:
+  PASS  orders=1691304 levels=726810 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 28000000 msgs:
+  PASS  orders=1691805 levels=726789 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 28500000 msgs:
+  PASS  orders=1692099 levels=726812 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 29000000 msgs:
+  PASS  orders=1693195 levels=726881 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 29500000 msgs:
+  PASS  orders=1695476 levels=727748 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 30000000 msgs:
+  PASS  orders=1696921 levels=728317 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 30500000 msgs:
+  PASS  orders=1703235 levels=729079 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 31000000 msgs:
+  PASS  orders=1705004 levels=729895 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 31500000 msgs:
+  PASS  orders=1706634 levels=730277 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 32000000 msgs:
+  PASS  orders=1706474 levels=730299 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 32500000 msgs:
+  PASS  orders=1707517 levels=730532 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 33000000 msgs:
+  PASS  orders=1703535 levels=727539 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 33500000 msgs:
+  PASS  orders=1704091 levels=727480 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 34000000 msgs:
+  PASS  orders=1710548 levels=730793 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 34500000 msgs:
+  PASS  orders=1711654 levels=731127 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 35000000 msgs:
+  PASS  orders=1711686 levels=731095 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 35500000 msgs:
+  PASS  orders=1712529 levels=731222 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 36000000 msgs:
+  PASS  orders=1713140 levels=731428 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 36500000 msgs:
+  PASS  orders=1715365 levels=732377 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 37000000 msgs:
+  PASS  orders=1715650 levels=732438 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 37500000 msgs:
+  PASS  orders=1716358 levels=732665 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 38000000 msgs:
+  PASS  orders=1686364 levels=722808 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 38500000 msgs:
+  PASS  orders=1684552 levels=722458 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 39000000 msgs:
+  PASS  orders=1708600 levels=729931 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 39500000 msgs:
+  PASS  orders=1715588 levels=732405 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 40000000 msgs:
+  PASS  orders=1717602 levels=733403 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 40500000 msgs:
+  PASS  orders=1719233 levels=733295 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 41000000 msgs:
+  PASS  orders=1720428 levels=733466 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 41500000 msgs:
+  PASS  orders=1721475 levels=734055 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 42000000 msgs:
+  PASS  orders=1721901 levels=734081 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 42500000 msgs:
+  PASS  orders=1722235 levels=734288 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 43000000 msgs:
+  PASS  orders=1722621 levels=734434 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 43500000 msgs:
+  PASS  orders=1722979 levels=734634 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 44000000 msgs:
+  PASS  orders=1722670 levels=734501 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 44500000 msgs:
+  PASS  orders=1725040 levels=735360 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 45000000 msgs:
+  PASS  orders=1724013 levels=734850 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 45500000 msgs:
+  PASS  orders=1724571 levels=734861 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 46000000 msgs:
+  PASS  orders=1725159 levels=735006 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 46500000 msgs:
+  PASS  orders=1726596 levels=735516 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 47000000 msgs:
+  PASS  orders=1725907 levels=735268 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 47500000 msgs:
+  PASS  orders=1727053 levels=735478 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 48000000 msgs:
+  PASS  orders=1728387 levels=736033 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 48500000 msgs:
+  PASS  orders=1728154 levels=735703 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 49000000 msgs:
+  PASS  orders=1728451 levels=735780 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 49500000 msgs:
+  PASS  orders=1729462 levels=736091 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 50000000 msgs:
+  PASS  orders=1729505 levels=736070 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 50500000 msgs:
+  PASS  orders=1730977 levels=736665 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 51000000 msgs:
+  PASS  orders=1730932 levels=736607 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 51500000 msgs:
+  PASS  orders=1730413 levels=736426 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 52000000 msgs:
+  PASS  orders=1730037 levels=736170 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 52500000 msgs:
+  PASS  orders=1718599 levels=733854 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 53000000 msgs:
+  PASS  orders=1722225 levels=735568 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 53500000 msgs:
+  PASS  orders=1724791 levels=736445 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 54000000 msgs:
+  PASS  orders=1725461 levels=736786 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 54500000 msgs:
+  PASS  orders=1725681 levels=736848 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 55000000 msgs:
+  PASS  orders=1726398 levels=736894 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 55500000 msgs:
+  PASS  orders=1726109 levels=736589 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 56000000 msgs:
+  PASS  orders=1726962 levels=736638 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 56500000 msgs:
+  PASS  orders=1726387 levels=736499 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 57000000 msgs:
+  PASS  orders=1728010 levels=737299 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 57500000 msgs:
+  PASS  orders=1729215 levels=737556 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 58000000 msgs:
+  PASS  orders=1730033 levels=737340 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 58500000 msgs:
+  PASS  orders=1729678 levels=737443 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 59000000 msgs:
+  PASS  orders=1730769 levels=737766 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 59500000 msgs:
+  PASS  orders=1730880 levels=737804 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 60000000 msgs:
+  PASS  orders=1730934 levels=737656 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 60500000 msgs:
+  PASS  orders=1729976 levels=737247 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 61000000 msgs:
+  PASS  orders=1730683 levels=737208 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 61500000 msgs:
+  PASS  orders=1731272 levels=737573 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 62000000 msgs:
+  PASS  orders=1731990 levels=737713 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 62500000 msgs:
+  PASS  orders=1733300 levels=738177 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 63000000 msgs:
+  PASS  orders=1733350 levels=738223 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 63500000 msgs:
+  PASS  orders=1732853 levels=738077 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 64000000 msgs:
+  PASS  orders=1733076 levels=738267 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 64500000 msgs:
+  PASS  orders=1734564 levels=738831 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 65000000 msgs:
+  PASS  orders=1734181 levels=738648 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 65500000 msgs:
+  PASS  orders=1735510 levels=738969 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 66000000 msgs:
+  PASS  orders=1735641 levels=738856 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 66500000 msgs:
+  PASS  orders=1736361 levels=738622 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 67000000 msgs:
+  PASS  orders=1736725 levels=738709 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 67500000 msgs:
+  PASS  orders=1736294 levels=738713 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 68000000 msgs:
+  PASS  orders=1736152 levels=738810 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 68500000 msgs:
+  PASS  orders=1736078 levels=738741 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 69000000 msgs:
+  PASS  orders=1722542 levels=732247 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 69500000 msgs:
+  PASS  orders=1734566 levels=738251 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 70000000 msgs:
+  PASS  orders=1736965 levels=739211 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 70500000 msgs:
+  PASS  orders=1738148 levels=739345 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 71000000 msgs:
+  PASS  orders=1739453 levels=739851 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 71500000 msgs:
+  PASS  orders=1742762 levels=741150 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 72000000 msgs:
+  PASS  orders=1742488 levels=741253 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 72500000 msgs:
+  PASS  orders=1742820 levels=741409 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 73000000 msgs:
+  PASS  orders=1743328 levels=741537 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 73500000 msgs:
+  PASS  orders=1743873 levels=741686 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 74000000 msgs:
+  PASS  orders=1741381 levels=739667 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 74500000 msgs:
+  PASS  orders=1742410 levels=740086 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 75000000 msgs:
+  PASS  orders=1742372 levels=740043 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 75500000 msgs:
+  PASS  orders=1743091 levels=740203 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 76000000 msgs:
+  PASS  orders=1744697 levels=741747 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 76500000 msgs:
+  PASS  orders=1745121 levels=741578 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 77000000 msgs:
+  PASS  orders=1745654 levels=741749 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 77500000 msgs:
+  PASS  orders=1745783 levels=741771 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 78000000 msgs:
+  PASS  orders=1745796 levels=741724 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 78500000 msgs:
+  PASS  orders=1746403 levels=741909 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 79000000 msgs:
+  PASS  orders=1746983 levels=742108 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 79500000 msgs:
+  PASS  orders=1746864 levels=742055 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 80000000 msgs:
+  PASS  orders=1746580 levels=741906 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 80500000 msgs:
+  PASS  orders=1747167 levels=742176 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 81000000 msgs:
+  PASS  orders=1747519 levels=742133 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 81500000 msgs:
+  PASS  orders=1747918 levels=742300 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 82000000 msgs:
+  PASS  orders=1748425 levels=742682 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 82500000 msgs:
+  PASS  orders=1749117 levels=742751 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 83000000 msgs:
+  PASS  orders=1749572 levels=742595 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 83500000 msgs:
+  PASS  orders=1750354 levels=742859 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 84000000 msgs:
+  PASS  orders=1750811 levels=742856 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 84500000 msgs:
+  PASS  orders=1750103 levels=742686 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 85000000 msgs:
+  PASS  orders=1750732 levels=742857 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 85500000 msgs:
+  PASS  orders=1750979 levels=742816 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 86000000 msgs:
+  PASS  orders=1750753 levels=742644 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 86500000 msgs:
+  PASS  orders=1750915 levels=742738 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 87000000 msgs:
+  PASS  orders=1751709 levels=742863 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 87500000 msgs:
+  PASS  orders=1751008 levels=742771 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 88000000 msgs:
+  PASS  orders=1751821 levels=742864 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 88500000 msgs:
+  PASS  orders=1752140 levels=742936 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 89000000 msgs:
+  PASS  orders=1752193 levels=742964 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 89500000 msgs:
+  PASS  orders=1752748 levels=743222 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 90000000 msgs:
+  PASS  orders=1752791 levels=743182 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 90500000 msgs:
+  PASS  orders=1757141 levels=745691 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 91000000 msgs:
+  PASS  orders=1756622 levels=745663 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 91500000 msgs:
+  PASS  orders=1756618 levels=745753 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 92000000 msgs:
+  PASS  orders=1756821 levels=745539 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 92500000 msgs:
+  PASS  orders=1756958 levels=745659 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 93000000 msgs:
+  PASS  orders=1756921 levels=745592 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 93500000 msgs:
+  PASS  orders=1757303 levels=745793 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 94000000 msgs:
+  PASS  orders=1757833 levels=745941 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 94500000 msgs:
+  PASS  orders=1757725 levels=745965 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 95000000 msgs:
+  PASS  orders=1757934 levels=745926 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 95500000 msgs:
+  PASS  orders=1758771 levels=746215 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 96000000 msgs:
+  PASS  orders=1759388 levels=746256 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 96500000 msgs:
+  PASS  orders=1759465 levels=746475 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 97000000 msgs:
+  PASS  orders=1760392 levels=746665 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 97500000 msgs:
+  PASS  orders=1759961 levels=746504 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 98000000 msgs:
+  PASS  orders=1760148 levels=746480 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 98500000 msgs:
+  PASS  orders=1759964 levels=746528 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 99000000 msgs:
+  PASS  orders=1759614 levels=746367 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 99500000 msgs:
+  PASS  orders=1759812 levels=746471 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 100000000 msgs:
+  PASS  orders=1759953 levels=746554 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 100500000 msgs:
+  PASS  orders=1760440 levels=746586 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 101000000 msgs:
+  PASS  orders=1760788 levels=746653 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 101500000 msgs:
+  PASS  orders=1760952 levels=746685 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 102000000 msgs:
+  PASS  orders=1762087 levels=747009 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 102500000 msgs:
+  PASS  orders=1762727 levels=747116 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 103000000 msgs:
+  PASS  orders=1762547 levels=746977 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 103500000 msgs:
+  PASS  orders=1762570 levels=746867 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 104000000 msgs:
+  PASS  orders=1762576 levels=747105 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 104500000 msgs:
+  PASS  orders=1762706 levels=746917 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 105000000 msgs:
+  PASS  orders=1763569 levels=747382 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 105500000 msgs:
+  PASS  orders=1764551 levels=747547 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 106000000 msgs:
+  PASS  orders=1764566 levels=747317 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 106500000 msgs:
+  PASS  orders=1764304 levels=747453 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 107000000 msgs:
+  PASS  orders=1763941 levels=747348 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 107500000 msgs:
+  PASS  orders=1764578 levels=747610 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 108000000 msgs:
+  PASS  orders=1765047 levels=748024 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 108500000 msgs:
+  PASS  orders=1764836 levels=748058 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 109000000 msgs:
+  PASS  orders=1764981 levels=747827 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 109500000 msgs:
+  PASS  orders=1765093 levels=747928 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 110000000 msgs:
+  PASS  orders=1765065 levels=747855 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 110500000 msgs:
+  PASS  orders=1764953 levels=747970 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 111000000 msgs:
+  PASS  orders=1765377 levels=747882 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 111500000 msgs:
+  PASS  orders=1765274 levels=747834 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 112000000 msgs:
+  PASS  orders=1765705 levels=748085 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 112500000 msgs:
+  PASS  orders=1765905 levels=748132 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 113000000 msgs:
+  PASS  orders=1766452 levels=748208 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 113500000 msgs:
+  PASS  orders=1766147 levels=748159 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 114000000 msgs:
+  PASS  orders=1766331 levels=748224 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 114500000 msgs:
+  PASS  orders=1765796 levels=748255 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 115000000 msgs:
+  PASS  orders=1762867 levels=747443 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 115500000 msgs:
+  PASS  orders=1763382 levels=747799 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 116000000 msgs:
+  PASS  orders=1763773 levels=747877 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 116500000 msgs:
+  PASS  orders=1764467 levels=748019 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 117000000 msgs:
+  PASS  orders=1764595 levels=748148 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 117500000 msgs:
+  PASS  orders=1765327 levels=748273 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 118000000 msgs:
+  PASS  orders=1765504 levels=748308 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 118500000 msgs:
+  PASS  orders=1765632 levels=748292 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 119000000 msgs:
+  PASS  orders=1765547 levels=748144 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 119500000 msgs:
+  PASS  orders=1765768 levels=748403 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 120000000 msgs:
+  PASS  orders=1766000 levels=748465 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 120500000 msgs:
+  PASS  orders=1766924 levels=748804 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 121000000 msgs:
+  PASS  orders=1766524 levels=748607 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 121500000 msgs:
+  PASS  orders=1766730 levels=748796 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 122000000 msgs:
+  PASS  orders=1767372 levels=748873 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 122500000 msgs:
+  PASS  orders=1766919 levels=748596 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 123000000 msgs:
+  PASS  orders=1768372 levels=749017 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 123500000 msgs:
+  PASS  orders=1767865 levels=749092 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 124000000 msgs:
+  PASS  orders=1767387 levels=748966 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 124500000 msgs:
+  PASS  orders=1766525 levels=748756 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 125000000 msgs:
+  PASS  orders=1766805 levels=748979 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 125500000 msgs:
+  PASS  orders=1766695 levels=748905 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 126000000 msgs:
+  PASS  orders=1766999 levels=748943 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 126500000 msgs:
+  PASS  orders=1768219 levels=749285 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 127000000 msgs:
+  PASS  orders=1768267 levels=749438 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 127500000 msgs:
+  PASS  orders=1768565 levels=749497 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 128000000 msgs:
+  PASS  orders=1767660 levels=749127 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 128500000 msgs:
+  PASS  orders=1768899 levels=749494 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 129000000 msgs:
+  PASS  orders=1769314 levels=749422 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 129500000 msgs:
+  PASS  orders=1769862 levels=749613 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 130000000 msgs:
+  PASS  orders=1769388 levels=749438 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 130500000 msgs:
+  PASS  orders=1769713 levels=749518 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 131000000 msgs:
+  PASS  orders=1768676 levels=749196 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 131500000 msgs:
+  PASS  orders=1769653 levels=749422 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 132000000 msgs:
+  PASS  orders=1770898 levels=749788 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 132500000 msgs:
+  PASS  orders=1771215 levels=749697 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 133000000 msgs:
+  PASS  orders=1771243 levels=749741 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 133500000 msgs:
+  PASS  orders=1772010 levels=749931 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 134000000 msgs:
+  PASS  orders=1774142 levels=750431 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 134500000 msgs:
+  PASS  orders=1780738 levels=754158 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 135000000 msgs:
+  PASS  orders=1781221 levels=754669 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 135500000 msgs:
+  PASS  orders=1781077 levels=754457 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 136000000 msgs:
+  PASS  orders=1781536 levels=754555 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 136500000 msgs:
+  PASS  orders=1782797 levels=754674 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 137000000 msgs:
+  PASS  orders=1782464 levels=754596 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 137500000 msgs:
+  PASS  orders=1783212 levels=755008 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 138000000 msgs:
+  PASS  orders=1783341 levels=754850 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 138500000 msgs:
+  PASS  orders=1782858 levels=754667 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 139000000 msgs:
+  PASS  orders=1782986 levels=754679 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 139500000 msgs:
+  PASS  orders=1783507 levels=754739 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 140000000 msgs:
+  PASS  orders=1784114 levels=754786 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 140500000 msgs:
+  PASS  orders=1784295 levels=755042 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 141000000 msgs:
+  PASS  orders=1783627 levels=754801 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 141500000 msgs:
+  PASS  orders=1783137 levels=754653 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 142000000 msgs:
+  PASS  orders=1783486 levels=754752 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 142500000 msgs:
+  PASS  orders=1784862 levels=755139 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 143000000 msgs:
+  PASS  orders=1785031 levels=755424 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 143500000 msgs:
+  PASS  orders=1785150 levels=755148 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 144000000 msgs:
+  PASS  orders=1785112 levels=755207 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 144500000 msgs:
+  PASS  orders=1785502 levels=755300 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 145000000 msgs:
+  PASS  orders=1787126 levels=755799 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 145500000 msgs:
+  PASS  orders=1785218 levels=755457 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 146000000 msgs:
+  PASS  orders=1785658 levels=755200 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 146500000 msgs:
+  PASS  orders=1785435 levels=755350 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 147000000 msgs:
+  PASS  orders=1784376 levels=755062 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 147500000 msgs:
+  PASS  orders=1785207 levels=755336 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 148000000 msgs:
+  PASS  orders=1786240 levels=755870 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 148500000 msgs:
+  PASS  orders=1786298 levels=755989 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 149000000 msgs:
+  PASS  orders=1786977 levels=755863 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 149500000 msgs:
+  PASS  orders=1787070 levels=755859 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 150000000 msgs:
+  PASS  orders=1787946 levels=756034 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 150500000 msgs:
+  PASS  orders=1787560 levels=756180 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 151000000 msgs:
+  PASS  orders=1787028 levels=756134 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 151500000 msgs:
+  PASS  orders=1786469 levels=755852 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 152000000 msgs:
+  PASS  orders=1787245 levels=755907 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 152500000 msgs:
+  PASS  orders=1787855 levels=756107 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 153000000 msgs:
+  PASS  orders=1787594 levels=756207 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 153500000 msgs:
+  PASS  orders=1787708 levels=756112 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 154000000 msgs:
+  PASS  orders=1786577 levels=755500 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 154500000 msgs:
+  PASS  orders=1787191 levels=755474 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 155000000 msgs:
+  PASS  orders=1787939 levels=755633 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 155500000 msgs:
+  PASS  orders=1787172 levels=755323 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 156000000 msgs:
+  PASS  orders=1787426 levels=755468 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 156500000 msgs:
+  PASS  orders=1789159 levels=755962 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 157000000 msgs:
+  PASS  orders=1789311 levels=756164 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 157500000 msgs:
+  PASS  orders=1789655 levels=756389 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 158000000 msgs:
+  PASS  orders=1789768 levels=756535 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 158500000 msgs:
+  PASS  orders=1789749 levels=756634 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 159000000 msgs:
+  PASS  orders=1790356 levels=756584 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 159500000 msgs:
+  PASS  orders=1790493 levels=756754 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 160000000 msgs:
+  PASS  orders=1789695 levels=756537 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 160500000 msgs:
+  PASS  orders=1790640 levels=756762 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 161000000 msgs:
+  PASS  orders=1790235 levels=756624 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 161500000 msgs:
+  PASS  orders=1790619 levels=756656 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 162000000 msgs:
+  PASS  orders=1791438 levels=756803 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 162500000 msgs:
+  PASS  orders=1790130 levels=756514 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 163000000 msgs:
+  PASS  orders=1789489 levels=756265 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 163500000 msgs:
+  PASS  orders=1790795 levels=756445 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 164000000 msgs:
+  PASS  orders=1790885 levels=756679 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 164500000 msgs:
+  PASS  orders=1790601 levels=756671 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 165000000 msgs:
+  PASS  orders=1788433 levels=755717 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 165500000 msgs:
+  PASS  orders=1788143 levels=755789 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 166000000 msgs:
+  PASS  orders=1788263 levels=755734 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 166500000 msgs:
+  PASS  orders=1788593 levels=755994 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 167000000 msgs:
+  PASS  orders=1789845 levels=756245 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 167500000 msgs:
+  PASS  orders=1790381 levels=756598 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 168000000 msgs:
+  PASS  orders=1789487 levels=756233 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 168500000 msgs:
+  PASS  orders=1789339 levels=756042 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 169000000 msgs:
+  PASS  orders=1789682 levels=756313 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 169500000 msgs:
+  PASS  orders=1790065 levels=756441 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 170000000 msgs:
+  PASS  orders=1790312 levels=756514 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 170500000 msgs:
+  PASS  orders=1790925 levels=756427 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 171000000 msgs:
+  PASS  orders=1790800 levels=756510 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 171500000 msgs:
+  PASS  orders=1790230 levels=756530 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 172000000 msgs:
+  PASS  orders=1789678 levels=756275 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 172500000 msgs:
+  PASS  orders=1790087 levels=756294 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 173000000 msgs:
+  PASS  orders=1790572 levels=756540 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 173500000 msgs:
+  PASS  orders=1791549 levels=756731 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 174000000 msgs:
+  PASS  orders=1791758 levels=756856 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 174500000 msgs:
+  PASS  orders=1791861 levels=756989 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 175000000 msgs:
+  PASS  orders=1791996 levels=756965 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 175500000 msgs:
+  PASS  orders=1792384 levels=756825 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 176000000 msgs:
+  PASS  orders=1793052 levels=756966 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 176500000 msgs:
+  PASS  orders=1791869 levels=756629 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 177000000 msgs:
+  PASS  orders=1790961 levels=756328 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 177500000 msgs:
+  PASS  orders=1791993 levels=756520 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 178000000 msgs:
+  PASS  orders=1792468 levels=756690 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 178500000 msgs:
+  PASS  orders=1793676 levels=756920 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 179000000 msgs:
+  PASS  orders=1793405 levels=756666 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 179500000 msgs:
+  PASS  orders=1793933 levels=756672 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 180000000 msgs:
+  PASS  orders=1793906 levels=756770 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 180500000 msgs:
+  PASS  orders=1793863 levels=756823 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 181000000 msgs:
+  PASS  orders=1793448 levels=756736 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 181500000 msgs:
+  PASS  orders=1792852 levels=756606 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 182000000 msgs:
+  PASS  orders=1793913 levels=756696 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 182500000 msgs:
+  PASS  orders=1795255 levels=756950 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 183000000 msgs:
+  PASS  orders=1796573 levels=757161 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 183500000 msgs:
+  PASS  orders=1795692 levels=757143 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 184000000 msgs:
+  PASS  orders=1796801 levels=757385 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 184500000 msgs:
+  PASS  orders=1796765 levels=757325 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 185000000 msgs:
+  PASS  orders=1795806 levels=757130 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 185500000 msgs:
+  PASS  orders=1795314 levels=756945 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 186000000 msgs:
+  PASS  orders=1795398 levels=756864 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 186500000 msgs:
+  PASS  orders=1794985 levels=756837 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 187000000 msgs:
+  PASS  orders=1794891 levels=756906 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 187500000 msgs:
+  PASS  orders=1795963 levels=757037 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 188000000 msgs:
+  PASS  orders=1795474 levels=756998 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 188500000 msgs:
+  PASS  orders=1795304 levels=757069 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 189000000 msgs:
+  PASS  orders=1796003 levels=757081 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 189500000 msgs:
+  PASS  orders=1794609 levels=756896 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 190000000 msgs:
+  PASS  orders=1794804 levels=756994 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 190500000 msgs:
+  PASS  orders=1789148 levels=753445 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 191000000 msgs:
+  PASS  orders=1795173 levels=757014 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 191500000 msgs:
+  PASS  orders=1793923 levels=756743 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 192000000 msgs:
+  PASS  orders=1793834 levels=756872 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 192500000 msgs:
+  PASS  orders=1794003 levels=756857 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 193000000 msgs:
+  PASS  orders=1793059 levels=756708 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 193500000 msgs:
+  PASS  orders=1788871 levels=753463 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 194000000 msgs:
+  PASS  orders=1789883 levels=753796 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 194500000 msgs:
+  PASS  orders=1790184 levels=754048 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 195000000 msgs:
+  PASS  orders=1789930 levels=753895 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 195500000 msgs:
+  PASS  orders=1789997 levels=753848 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 196000000 msgs:
+  PASS  orders=1789828 levels=753725 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 196500000 msgs:
+  PASS  orders=1790081 levels=753539 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 197000000 msgs:
+  PASS  orders=1791148 levels=753771 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 197500000 msgs:
+  PASS  orders=1790360 levels=753702 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 198000000 msgs:
+  PASS  orders=1790351 levels=753743 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 198500000 msgs:
+  PASS  orders=1791280 levels=753732 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 199000000 msgs:
+  PASS  orders=1792035 levels=753893 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 199500000 msgs:
+  PASS  orders=1791870 levels=753809 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 200000000 msgs:
+  PASS  orders=1791899 levels=753904 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 200500000 msgs:
+  PASS  orders=1791784 levels=754025 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 201000000 msgs:
+  PASS  orders=1791583 levels=753889 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 201500000 msgs:
+  PASS  orders=1790809 levels=753790 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 202000000 msgs:
+  PASS  orders=1789490 levels=753564 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 202500000 msgs:
+  PASS  orders=1788906 levels=753367 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 203000000 msgs:
+  PASS  orders=1789839 levels=753843 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 203500000 msgs:
+  PASS  orders=1790406 levels=754019 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 204000000 msgs:
+  PASS  orders=1789730 levels=753842 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 204500000 msgs:
+  PASS  orders=1788637 levels=753199 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 205000000 msgs:
+  PASS  orders=1793079 levels=754437 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 205500000 msgs:
+  PASS  orders=1794702 levels=754781 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 206000000 msgs:
+  PASS  orders=1795718 levels=755171 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 206500000 msgs:
+  PASS  orders=1794803 levels=755003 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 207000000 msgs:
+  PASS  orders=1793969 levels=754713 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 207500000 msgs:
+  PASS  orders=1795188 levels=754928 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 208000000 msgs:
+  PASS  orders=1794597 levels=754757 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 208500000 msgs:
+  PASS  orders=1795465 levels=754970 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 209000000 msgs:
+  PASS  orders=1792657 levels=754327 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 209500000 msgs:
+  PASS  orders=1792961 levels=754546 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 210000000 msgs:
+  PASS  orders=1792500 levels=754476 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 210500000 msgs:
+  PASS  orders=1793049 levels=754630 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 211000000 msgs:
+  PASS  orders=1792074 levels=754467 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 211500000 msgs:
+  PASS  orders=1793191 levels=754588 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 212000000 msgs:
+  PASS  orders=1792883 levels=754626 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 212500000 msgs:
+  PASS  orders=1792836 levels=754618 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 213000000 msgs:
+  PASS  orders=1792886 levels=754472 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 213500000 msgs:
+  PASS  orders=1793099 levels=754401 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 214000000 msgs:
+  PASS  orders=1792952 levels=754477 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 214500000 msgs:
+  PASS  orders=1793072 levels=754372 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 215000000 msgs:
+  PASS  orders=1794175 levels=754531 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 215500000 msgs:
+  PASS  orders=1794213 levels=754548 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 216000000 msgs:
+  PASS  orders=1793375 levels=754324 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 216500000 msgs:
+  PASS  orders=1791264 levels=754016 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 217000000 msgs:
+  PASS  orders=1792755 levels=754441 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 217500000 msgs:
+  PASS  orders=1794106 levels=754464 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 218000000 msgs:
+  PASS  orders=1792427 levels=754065 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 218500000 msgs:
+  PASS  orders=1791389 levels=753796 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 219000000 msgs:
+  PASS  orders=1791939 levels=753769 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 219500000 msgs:
+  PASS  orders=1793188 levels=754064 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 220000000 msgs:
+  PASS  orders=1793839 levels=754121 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 220500000 msgs:
+  PASS  orders=1793325 levels=753820 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 221000000 msgs:
+  PASS  orders=1791148 levels=753431 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 221500000 msgs:
+  PASS  orders=1790209 levels=753210 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 222000000 msgs:
+  PASS  orders=1790734 levels=753350 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 222500000 msgs:
+  PASS  orders=1792067 levels=753765 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 223000000 msgs:
+  PASS  orders=1792189 levels=753819 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 223500000 msgs:
+  PASS  orders=1792254 levels=753696 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 224000000 msgs:
+  PASS  orders=1792872 levels=753738 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 224500000 msgs:
+  PASS  orders=1797173 levels=754771 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 225000000 msgs:
+  PASS  orders=1796791 levels=754494 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 225500000 msgs:
+  PASS  orders=1796790 levels=754351 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 226000000 msgs:
+  PASS  orders=1798512 levels=754929 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 226500000 msgs:
+  PASS  orders=1799486 levels=754987 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 227000000 msgs:
+  PASS  orders=1799482 levels=754867 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 227500000 msgs:
+  PASS  orders=1799585 levels=754810 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 228000000 msgs:
+  PASS  orders=1800670 levels=754936 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 228500000 msgs:
+  PASS  orders=1801743 levels=755120 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 229000000 msgs:
+  PASS  orders=1801923 levels=755222 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 229500000 msgs:
+  PASS  orders=1810677 levels=757633 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 230000000 msgs:
+  PASS  orders=1821964 levels=761143 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 230500000 msgs:
+  PASS  orders=1832163 levels=763807 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 231000000 msgs:
+  PASS  orders=1834910 levels=764292 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 231500000 msgs:
+  PASS  orders=1833999 levels=764127 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 232000000 msgs:
+  PASS  orders=1833478 levels=764028 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 232500000 msgs:
+  PASS  orders=1835282 levels=764398 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 233000000 msgs:
+  PASS  orders=1834421 levels=764201 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 233500000 msgs:
+  PASS  orders=1834197 levels=764186 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 234000000 msgs:
+  PASS  orders=1833682 levels=763897 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 234500000 msgs:
+  PASS  orders=1820481 levels=757078 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 235000000 msgs:
+  PASS  orders=1821879 levels=757186 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 235500000 msgs:
+  PASS  orders=1824369 levels=757539 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 236000000 msgs:
+  PASS  orders=1823848 levels=757341 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 236500000 msgs:
+  PASS  orders=1823761 levels=757203 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 237000000 msgs:
+  PASS  orders=1820470 levels=756782 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 237500000 msgs:
+  PASS  orders=1819700 levels=756892 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 238000000 msgs:
+  PASS  orders=1819695 levels=756556 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 238500000 msgs:
+  PASS  orders=1818932 levels=756489 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 239000000 msgs:
+  PASS  orders=1820213 levels=756781 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 239500000 msgs:
+  PASS  orders=1822093 levels=756994 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 240000000 msgs:
+  PASS  orders=1821805 levels=756885 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 240500000 msgs:
+  PASS  orders=1821350 levels=756689 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 241000000 msgs:
+  PASS  orders=1829863 levels=758238 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 241500000 msgs:
+  PASS  orders=1830410 levels=758345 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 242000000 msgs:
+  PASS  orders=1834820 levels=760549 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 242500000 msgs:
+  PASS  orders=1834703 levels=760387 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 243000000 msgs:
+  PASS  orders=1834903 levels=760236 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 243500000 msgs:
+  PASS  orders=1834679 levels=760069 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 244000000 msgs:
+  PASS  orders=1832875 levels=759616 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 244500000 msgs:
+  PASS  orders=1832812 levels=759713 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 245000000 msgs:
+  PASS  orders=1845011 levels=762437 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 245500000 msgs:
+  PASS  orders=1850761 levels=764451 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 246000000 msgs:
+  PASS  orders=1857963 levels=766140 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 246500000 msgs:
+  PASS  orders=1860878 levels=767389 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 247000000 msgs:
+  PASS  orders=1866406 levels=769162 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 247500000 msgs:
+  PASS  orders=1868687 levels=770087 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 248000000 msgs:
+  PASS  orders=1874927 levels=771733 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 248500000 msgs:
+  PASS  orders=1851185 levels=770114 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 249000000 msgs:
+  PASS  orders=1874644 levels=776120 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 249500000 msgs:
+  PASS  orders=1884636 levels=778828 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 250000000 msgs:
+  PASS  orders=1895136 levels=782307 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 250500000 msgs:
+  PASS  orders=1891138 levels=780276 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 251000000 msgs:
+  PASS  orders=1893447 levels=781066 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 251500000 msgs:
+  PASS  orders=1896921 levels=782086 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 252000000 msgs:
+  PASS  orders=1894243 levels=780606 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 252500000 msgs:
+  PASS  orders=1904497 levels=783481 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 253000000 msgs:
+  PASS  orders=1906833 levels=783915 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 253500000 msgs:
+  PASS  orders=1891306 levels=771530 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 254000000 msgs:
+  PASS  orders=1918382 levels=779585 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 254500000 msgs:
+  PASS  orders=1923624 levels=781014 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 255000000 msgs:
+  PASS  orders=1909531 levels=772493 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 255500000 msgs:
+  PASS  orders=1911162 levels=772179 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 256000000 msgs:
+  PASS  orders=1912420 levels=771554 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 256500000 msgs:
+  PASS  orders=1911987 levels=771286 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 257000000 msgs:
+  PASS  orders=1879586 levels=752449 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 257500000 msgs:
+  PASS  orders=1880537 levels=754377 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 258000000 msgs:
+  PASS  orders=1886362 levels=755807 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 258500000 msgs:
+  PASS  orders=1886836 levels=757864 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 259000000 msgs:
+  PASS  orders=1888401 levels=757449 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 259500000 msgs:
+  PASS  orders=1875294 levels=758098 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 260000000 msgs:
+  PASS  orders=1870290 levels=757606 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 260500000 msgs:
+  PASS  orders=1852401 levels=751464 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 261000000 msgs:
+  PASS  orders=1848984 levels=748366 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 261500000 msgs:
+  PASS  orders=1810554 levels=745922 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 262000000 msgs:
+  PASS  orders=1459701 levels=574518 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 262500000 msgs:
+  PASS  orders=998646 levels=402567 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 263000000 msgs:
+  PASS  orders=518275 levels=220304 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 263500000 msgs:
+  PASS  orders=157545 levels=101033 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  after 264000000 msgs:
+  PASS  orders=151110 levels=95309 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  end of file:
+  PASS  orders=0 levels=0 share_mismatch=0 count_mismatch=0 level_without_orders=0 prices_without_level=0 unsorted=0
+  overall: PASS
+
+Anomalies:
+  exec_unknown=0
+  cancel_unknown=0
+  delete_unknown=0
+  replace_orig_unknown=0
+  add_existing=0
+  over_execution=0
+  over_cancel=0
+  peak_live=1924078
+Book invariants:
+  level_missing=0
+  level_underflow=0
+  crossed_updates=4777
+
+Trades (compare close_cross with the published close):
+  symbol      last_trade  at            volume  open_cross   close_cross  close_shares
+  AAPL          291.6000  19:59:16.140   5726425     289.4400      291.5200       1335177
+  MSFT          157.6300  19:35:43.504   3654389     158.9900      157.5900       2279904
+  AMZN         1846.0100  19:57:02.503    734024    1874.0000     1846.8900        136244
+  INTC           59.5000  18:34:33.852   2907448      59.9900       59.6200       1592481
+  CSCO           47.5500  19:35:03.398   2245946      47.7500       47.5900       1487158
+
+State hash:
+  book     = 0000000000000000
+  store    = 0000000000000000
+  trades   = dbf661466b1b27d6
+  combined = 5cdfcc85f1d6976a
